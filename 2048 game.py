@@ -54,13 +54,11 @@ def get_current_state(grid):
 
 	return 'LOST'
 
-
 def compress(grid):
 
 	changed = False
 	new_grid = []
 
-	# with all cells empty
 	for i in range(4):
 		new_grid.append([0] * 4)
 
@@ -76,10 +74,7 @@ def compress(grid):
 					changed = True
 				pos += 1
 
-	# returning new compressed gridrix
-	# and the flag variable.
 	return new_grid, changed
-
 
 def merge(grid):
 	
@@ -105,7 +100,6 @@ def reverse(grid):
 			new_grid[i].append(grid[i][3 - j])
 	return new_grid
 
-
 def transpose(grid):
 	new_grid = []
 	for i in range(4):
@@ -113,7 +107,6 @@ def transpose(grid):
 		for j in range(4):
 			new_grid[i].append(grid[j][i])
 	return new_grid
-
 
 def move_left(grid):
 
@@ -124,7 +117,6 @@ def move_left(grid):
 	changed = changed1 or changed2
 
 	new_grid, temp = compress(new_grid)
-
 	return new_grid, changed
 
 
@@ -161,7 +153,6 @@ def move_down(grid):
 
 grid = start_game()
 while(True):
-
 	x = input("Press the command : ")
 
     # to move left
